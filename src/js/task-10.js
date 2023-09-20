@@ -64,7 +64,6 @@ console.log(mass2);
 
 let mass = [];
 console.log(mass);
-//   console.log(mass.join(''));
 
 refs.btnCreate.addEventListener('click', num)
 function num(evt) {
@@ -86,15 +85,3 @@ function createBoxes(mass2) {
   ).join('');
 };
 refs.boxesDiv.insertAdjacentHTML('beforeend', createBoxes(mass2));
-
-
-
-// function createMarkup(arr) {
-//     return arr
-//         .map(
-//             (id, car, type, prise, img) =>
-//                 `<li> ${car}'...'${type}
-//                 </li>`
-//         ).join('');
-// }
-// list.insertAdjacentHTML('beforeend', createMarkup(cars));
