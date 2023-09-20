@@ -9,9 +9,9 @@ const counterValue = {
         this.value -= 1;
     },
 };
-const decrementBtn = document.querySelector('button[data-action="decrement"]');
-const incrementBtn = document.querySelector('button[data-action="increment"]');
-const valueEl = document.querySelector('span[id="value"]');
+const decrementBtn = document.querySelector("#counter > button:nth-child(1)");
+const incrementBtn = document.querySelector("#counter > button:nth-child(3)");
+const valueEl = document.querySelector("#value");
 
 decrementBtn.addEventListener('click', function () {
     counterValue.decrement();

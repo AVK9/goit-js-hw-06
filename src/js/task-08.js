@@ -19,7 +19,6 @@ function onSubmit(evt) {
         email: email.value,
         password: password.value
     };
-        console.dir(data);  
     } 
    formControl.reset();
     }

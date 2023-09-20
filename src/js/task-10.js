@@ -36,52 +36,20 @@ const refs = {
   btnDestroy: document.querySelector("#controls > button:nth-child(3)"),
   boxesDiv: document.querySelector("#boxes")
 };
-console.dir(refs.inputControls);
-console.dir(refs.btnCreate);
-console.dir(refs.btnDestroy);
-console.dir(refs.boxesDiv);
 
-
-
-
-let inputNum;
-refs.inputControls.addEventListener('input', evt => {
-  return inputNum = evt.currentTarget.value;
-  console.dir(inputNum);
-})
-
-
-const mass2 = [
-{ boxSize: 30, color: '#e05c20'},
-{ boxSize: 40, color: '#db65e2'},
-{ boxSize: 50, color: '#870110'},
-{ boxSize: 60, color: '#cce368'},
-{ boxSize: 70, color: '#e6d32c'},
-];
-
-console.log(mass2);
-
-
-let mass = [];
-console.log(mass);
-
-refs.btnCreate.addEventListener('click', num)
-function num(evt) {
-    const size = inputNum; //
-  for ( let i = 1; i <= size; i++) {
-    mass.push(Number(`{boxSize: ${20 +(i * 10)}, color: '${getRandomHexColor()}'}`));
+refs.btnCreate.addEventListener('click', createBoxes)
+function createBoxes() {
+  let amount = [];
+  for (let i = 0; i < refs.inputControls.value; i += 1) {
+    amount.push(`<div style="width: ${20 +(i * 10)}px; height:${20 +(i * 10)}px; background-color: ${getRandomHexColor()};"></div>`);
   }
-     console.dir(size);
-    }
-const massssss = [...mass]
-console.log(massssss);
-let arrClone = Array.from(mass);
-console.log(arrClone);
-function createBoxes(mass2) {
+refs.boxesDiv.insertAdjacentHTML('beforeend', amount.join(''));
+}
 
-  return mass2
-    .map(
-      ({boxSize, color}) => `<div class="qqqq" style="width: ${boxSize}px; height:${boxSize}px; background-color: ${color};"></div>`
-  ).join('');
-};
-refs.boxesDiv.insertAdjacentHTML('beforeend', createBoxes(mass2));
+refs.btnDestroy.addEventListener('click', destroyBoxes)
+function destroyBoxes() {
+  const element = document.getElementById("boxes");
+  element.parentNode.removeChild(element);
+//   refs.inputControls.reset(); // Не працює чому дає помилку?
+setTimeout(function(){ document.location.reload();},2000);
+}

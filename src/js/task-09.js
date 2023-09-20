@@ -16,23 +16,12 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const widgetColor = document.querySelector('.widget');
+const nameColor = document.querySelector('.color');
 const backGrd = document.body;
-const nameColor = widgetColor.firstElementChild.lastElementChild;
-const btnChColor = widgetColor.lastElementChild;
+const btnChColor = document.querySelector('.change-color');
 
 btnChColor.addEventListener('click', onClick);
-function onClick(evt) {
+function onClick() {
 nameColor.textContent = getRandomHexColor();  
 backGrd.style.backgroundColor = getRandomHexColor();
 }
-
-
-// const nameColor = document.querySelector('.color');
-// const backGrd = document.querySelector('body');
-// const btnChColor = document.querySelector('.change-color');
-// btnChColor.addEventListener('click', onClick);
-// function onClick(evt) {
-// nameColor.textContent = getRandomHexColor();  
-// backGrd.style.backgroundColor = getRandomHexColor();
-// }
