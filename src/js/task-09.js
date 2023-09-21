@@ -22,6 +22,9 @@ const btnChColor = document.querySelector('.change-color');
 
 btnChColor.addEventListener('click', onClick);
 function onClick() {
-nameColor.textContent = getRandomHexColor();  
-backGrd.style.backgroundColor = getRandomHexColor();
+  let colorRandom = getRandomHexColor()
+  nameColor.textContent = colorRandom;  
+  backGrd.style.backgroundColor = colorRandom;
 }
+
+

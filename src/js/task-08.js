@@ -18,10 +18,12 @@ function onSubmit(evt) {
     const data = {
         email: email.value,
         password: password.value
-    };
+        };
+        console.log(data);
     } 
    formControl.reset();
     }
   
+
 
 

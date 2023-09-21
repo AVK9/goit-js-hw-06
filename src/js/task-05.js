@@ -9,8 +9,8 @@ const nameInput = document.querySelector('#name-input');
 const userHello = document.querySelector('#name-output')
  
 nameInput.addEventListener('input', (event) => {
-    if (event.currentTarget.value) {
-userHello.textContent = event.currentTarget.value;
+    if (event.currentTarget.value.trim()) {
+        userHello.textContent = event.currentTarget.value.trim();
     } else {
         userHello.textContent = 'Anonymous';
      }

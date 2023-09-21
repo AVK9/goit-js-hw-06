@@ -21,7 +21,7 @@
 const textInput = document.querySelector('#validation-input');
 
     textInput.addEventListener('focusout', evt =>{
-        let length = textInput.value.length
+        let length = textInput.value.trim().length
         if (length === 6) {
             textInput.classList.add('valid');
             textInput.classList.remove('invalid');
