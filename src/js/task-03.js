@@ -21,7 +21,10 @@ const images = [
 ];
 
 const galleryImage = document.querySelector('ul.gallery');
-console.dir(galleryImage);
-const galleryEl = images.map(el => `<li><img src="${el.url}" alt="${el.alt}"></li>`).join('');
+  galleryImage.style.display = 'flex';
+  galleryImage.style.flexWrap = 'wrap';
+  galleryImage.style.gap = '20px 20px';
+  galleryImage.style.listStyle = 'none';
+
+const galleryEl = images.map(el => `<li><div style="width: 250px; height: 200px; box-shadow: 10px 5px 5px #5b5b5b"><img src="${el.url}" alt="${el.alt}" style="width: 100%; height: 100%; object-fit: cover;"></div></li>`).join('');
 galleryImage.insertAdjacentHTML('beforeend', galleryEl);
-console.dir(galleryImage);
