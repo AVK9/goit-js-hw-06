@@ -37,45 +37,20 @@ const refs = {
   boxesDiv: document.querySelector("#boxes")
 };
 
-refs.btnCreate.addEventListener('click', createBoxes)
 function createBoxes() {
+  refs.boxesDiv.innerHTML = "";
   let amount = [];
   for (let i = 0; i < refs.inputControls.value; i += 1) {
-    amount.push(`<div style="width: ${20 +(i * 10)}px; height:${20 +(i * 10)}px; background-color: ${getRandomHexColor()};" class = 'boxadd'></div>`);
+    amount.push(`<div style="width: ${30 +(i * 10)}px; height:${30 +(i * 10)}px; background-color: ${getRandomHexColor()};" class = 'boxadd'></div>`);
   }
   refs.boxesDiv.insertAdjacentHTML('beforeend', amount.join(''));
-  // refs.inputControls.value = '';
 }
+refs.btnCreate.addEventListener('click', createBoxes)
 
+function destroyBoxes() {
+refs.boxesDiv.innerHTML = "";
+refs.inputControls.value = "";
+}
 refs.btnDestroy.addEventListener('click', destroyBoxes)
-function destroyBoxes(evt) {
-  evt.preventDefault();
-  const element = document.getElementById("boxes");
-  element.parentNode.removeChild(element);
-  refs.inputControls.value = '';
-  // refs.inputControls.evt.carrentTarget.reset(); // Не працює чому дає помилку?
-  // setTimeout(function(){ document.location.reload();},2000);
-}
-///////////////////////////////
-//   if (!document.getElementsByClassName("boxadd")) {
-//     // refs.btnCreate.addEventListener('click', destroyBoxes)
-//     // function destroyBoxes(evt) {
-//     //   const element = document.getElementById("boxes");
-//     //   element.parentNode.removeChild(element);
-//     //   evt.carrentTarget.reset();
-//     //   refs.inputControls.evt.carrentTarget.reset(); // Не працює чому дає помилку?
-//     //   setTimeout(function () { document.location.reload(); }, 2000);
-//       // evt.preventDefault();
-//       console.log(document.getElementsByClassName("boxadd"));
 
-// }
 
-//   else {
-//     let amount = [];
-//   for (let i = 0; i < refs.inputControls.value; i += 1) {
-//     amount.push(`<div style="width: ${20 +(i * 10)}px; height:${20 +(i * 10)}px; background-color: ${getRandomHexColor()};"></div>`);
-//   }
-//     refs.boxesDiv.insertAdjacentHTML('beforeend', amount.join(''));
-    
-//     console.log('1111');
-//    }
